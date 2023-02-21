@@ -2,10 +2,10 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 
 const deps = require("./package.json").dependencies;
-module.exports = (env) => ({
+module.exports = (_, argv) => ({
   output: {
     publicPath:
-        env.prod ? "https://main.dz39vgz51901u.amplifyapp.com" : "http://localhost:3002/",
+        argv.mode === "production" ? "https://main.dz39vgz51901u.amplifyapp.com" : "http://localhost:3002/",
   },
 
   resolve: {
