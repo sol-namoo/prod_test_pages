@@ -5,11 +5,13 @@ import { recipes } from "./data";
 export default function Recipe() {
   const { slug } = useParams();
   const recipe = recipes.find(recipe => recipe.slug === slug);
+  console.log(recipes)
+  console.log(recipe)
 
   return (
     <div className="my-6 px-4 mx-auto grid gap-4 grid-cols-2">
       <div>
-        <img src={recipe.image} title={recipe.imageTitle} className="w-50 h-50" />
+        <img src={recipe.image} title={recipe.imageTitle} className="w-50 h-50" alt={recipe.imageTitle} />
       </div>
       <div>
         <h1 className="text-2xl font-extrabold tracking-tight text-gray-900 mb-2">{recipe.title}</h1>
