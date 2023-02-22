@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import {recipes} from "./data";
 
 export default function Recipes() {
-  console.log(recipes);
   return (
     <div className="my-4 px-4 text-center">
       <h1 className="text-gray-600 text-xl mb-2">Recipes</h1>

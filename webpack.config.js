@@ -5,7 +5,7 @@ const deps = require("./package.json").dependencies;
 module.exports = (_, argv) => ({
   output: {
     publicPath:
-        argv.mode === "production" ? "https://main.dz39vgz51901u.amplifyapp.com" : "http://localhost:3002/",
+        argv.mode === "production" ? "https://main.dz39vgz51901u.amplifyapp.com/" : "http://localhost:3002/",
   },
 
   resolve: {
@@ -42,7 +42,7 @@ module.exports = (_, argv) => ({
 
   plugins: [
     new ModuleFederationPlugin({
-      name: "pages",
+      name: "layout",
       filename: "remoteEntry.js",
       remotes: {},
       exposes: {
@@ -65,5 +65,4 @@ module.exports = (_, argv) => ({
       template: "./src/index.html",
     }),
   ],
-}
-);
+});
