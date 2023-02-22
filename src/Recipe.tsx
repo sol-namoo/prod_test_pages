@@ -5,8 +5,9 @@ import { recipes } from "./data";
 export default function Recipe() {
   const { slug } = useParams();
   const recipe = recipes.find(recipe => recipe.slug === slug);
-  console.log(recipes)
-  console.log(recipe)
+  console.log('parameter: ', slug)
+  console.log('total data: ', recipes)
+  console.log('item filtered by parameter: ', recipe)
 
   return (
     <div className="my-6 px-4 mx-auto grid gap-4 grid-cols-2">
